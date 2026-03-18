@@ -8,8 +8,7 @@ const links = [
   { to: '/', label: 'Inicio' },
   { to: '/sobre-nosotros', label: 'Sobre Nosotros' },
   { to: '/productos', label: 'Productos' },
-  { to: '/ofertas', label: 'Ofertas' },
-  { to: '/contacto', label: 'Contacto' },
+  { to: '/ofertas', label: 'Ofertas' }
 ];
 
 export default function Navbar() {
@@ -44,7 +43,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link to="/contacto" className="btn btn-primary navbar__cta">
-            Crédito Directo
+            Solicita tu equipo ya!
           </Link>
         </nav>
 

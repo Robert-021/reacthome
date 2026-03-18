@@ -10,6 +10,8 @@ import imgBolivariano from '../{components,pages,assets/images}/BancoBolivariano
 import imgPichincha from '../{components,pages,assets/images}/BancoPichinch.png';
 import imgInternacional from '../{components,pages,assets/images}/InternacionalBanco.svg';
 import imgProdubanco from '../{components,pages,assets/images}/Produbanco.webp';
+import imgHeroHonor from '../{components,pages,assets/images}/phones/honor.png';
+import imgHeroTCL from '../{components,pages,assets/images}/TCLOffert.png';
 
 // DATA (limpia, sin hooks aquí)
 const offers = [
@@ -56,28 +58,48 @@ export default function Offers() {
 
       {/* HERO */}
       <section className="offers__hero">
-        <div className="container">
-          <span className="section-tag">
-            <Tag size={16} style={{ display: 'inline', marginRight: 8 }} />
-            Promociones
-          </span>
+        <div className="offers__hero-wrapper">
 
-          <h1 className="section-title" style={{ color: 'var(--white)', marginTop: 12 }}>
-            Estrena Celular/Smart TV
-          </h1>
+          {/* IZQUIERDA */}
+          <img
+            src={imgHeroTCL}
+            alt="TCL"
+            className="hero__img hero__img--left"
+          />
 
-          <p style={{ color: 'rgba(255,255,255,0.6)', marginTop: 12, maxWidth: 480 }}>
-            Descubre los mejores precios en tecnología. ¡No dejes pasar estas oportunidades únicas!
-          </p>
+          {/* CENTRO */}
+          <div className="container hero__content">
+            <span className="section-tag">
+              <Tag size={16} style={{ display: 'inline', marginRight: 8 }} />
+              Promociones
+            </span>
 
-          <a
-            href="https://wa.me/593959728822?text=Buen%20día,%20he%20revisado%20su%20página%20web%20y%20los%20productos%20que%20ofrecen.%20Estoy%20muy%20interesado%20en%20adquirir%20uno%20de%20sus%20equipos%20y%20me%20gustaría%20recibir%20más%20información."
-            target="_blank"
-            rel="noopener"
-            className="btn btn-primary"
-          >
-            Aplica en línea <ExternalLink size={14} />
-          </a>
+            <h1 className="section-title hero__title">
+              Estrena Celular / Smart TV
+            </h1>
+
+            <p className="hero__text">
+              Descubre los mejores precios en tecnología.
+              ¡No dejes pasar estas oportunidades únicas!
+            </p>
+
+            <a
+              href="https://wa.me/593959728822?text=Buen%20día,%20he%20revisado%20su%20página%20web%20y%20los%20productos%20que%20ofrecen.%20Estoy%20muy%20interesado%20en%20adquirir%20uno%20de%20sus%20equipos%20y%20me%20gustaría%20recibir%20más%20información."
+              target="_blank"
+              rel="noopener"
+              className="btn btn-primary"
+            >
+              Aplica en línea <ExternalLink size={14} />
+            </a>
+          </div>
+
+          {/* DERECHA */}
+          <img
+            src={imgHeroHonor}
+            alt="Honor"
+            className="hero__img hero__img--right"
+          />
+
         </div>
       </section>
 

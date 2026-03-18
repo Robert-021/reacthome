@@ -23,7 +23,7 @@ export default function Contact() {
         <div className="container">
           <span className="section-tag">Escríbenos</span>
           <h1 className="section-title" style={{ color: 'var(--white)', marginTop: 12 }}>
-            Contáctanos
+            Adquiere tu equipo ya
           </h1>
         </div>
       </section>
@@ -41,6 +41,26 @@ export default function Contact() {
                 <div>
                   <strong>Dirección</strong>
                   <span>Edificio Empresarial Unicornio II, Piso 15-04</span>
+                </div>
+              </div>
+              {/* UBICACIÓN + MAPA */}
+              <div className="contact__info-item">
+                <div className="contact__info-icon">
+                  <MapPin size={20} />
+                </div>
+                <div style={{ width: "100%" }}>
+                  <strong>Ubicación</strong>
+
+                  <div className="contact__map">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.5605575663835!2d-78.48868082552292!3d-0.17695273541870316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a858f56d4d1%3A0xafe084d8581292c2!2sUnicornio%20II%20Edificio%20Empresarial!5e1!3m2!1ses-419!2sec!4v1773847587049!5m2!1ses-419!2sec"
+                      width="100%"
+                      height="160"
+                      style={{ border: 0, borderRadius: "8px" }}
+                      loading="lazy"
+                      title="Ubicación"
+                    ></iframe>
+                  </div>
                 </div>
               </div>
               <div className="contact__info-item">
