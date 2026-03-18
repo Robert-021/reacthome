@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --black: #0a0a0a;
+  --white: #ffffff;
+  --cream: #f5f2ed;
+  --teal: rgb(239, 68, 68);
+  --teal-dark: rgb(220, 38, 38);
+  --teal-light: rgba(239, 68, 68, 0.1);
+  --orange: #ff5c2e;
+  --gray-100: #f8f8f8;
+  --gray-200: #eeeeee;
+  --gray-400: #aaaaaa;
+  --gray-600: #666666;
+  --gray-800: #333333;
+  --font-display: 'Nunito', sans-serif;
+  --font-body: 'Nunito', sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 32px;
+  --radius-full: 9999px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.10);
+  --shadow-lg: 0 24px 64px rgba(0,0,0,0.14);
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--white); color: var(--black); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--gray-100); }
+::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 3px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-display); font-weight: 600; font-size: 0.9rem; padding: 14px 28px; border-radius: var(--radius-full); border: none; cursor: pointer; transition: var(--transition); letter-spacing: 0.02em; text-transform: uppercase; }
+.btn-primary { background: var(--teal); color: var(--white); }
+.btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,184,160,0.35); }
+.btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.5); }
+.btn-outline:hover { background: rgba(255,255,255,0.12); border-color: var(--white); }
+.btn-dark { background: var(--black); color: var(--white); }
+.btn-dark:hover { background: var(--gray-800); transform: translateY(-2px); }
+.section-tag { display: inline-block; font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); background: var(--teal-light); padding: 6px 14px; border-radius: var(--radius-full); margin-bottom: 16px; }
+.section-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.1; color: var(--black); }
+.section-subtitle { font-size: 1.05rem; color: var(--gray-600); max-width: 560px; margin-top: 12px; line-height: 1.7; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
+@keyframes scrollX { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.animate-fade-up { animation: fadeUp 0.7s ease both; }
+.animate-delay-1 { animation-delay: 0.1s; }
+.animate-delay-2 { animation-delay: 0.2s; }
+.animate-delay-3 { animation-delay: 0.3s; }
+.animate-delay-4 { animation-delay: 0.4s; }
