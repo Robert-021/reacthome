@@ -13,7 +13,7 @@ export default function Contact() {
     const msg = encodeURIComponent(
       `Hola HomePlay! Soy ${form.name}.\n\n${form.message}\n\nTeléfono: ${form.phone}`
     );
-    window.open(`https://wa.me/593995071589?text=${msg}`, '_blank');
+    window.open(`https://wa.me/593959728822?text=${msg}`, '_blank');
     setSent(true);
   };
 
@@ -47,7 +47,7 @@ export default function Contact() {
                 <div className="contact__info-icon"><Phone size={20} /></div>
                 <div>
                   <strong>Teléfono / WhatsApp</strong>
-                  <a href="tel:0995071589">099 507 1589</a>
+                  <a href="tel:0995071589">096 903 1988 - 096 019 2561</a>
                 </div>
               </div>
               <div className="contact__info-item">

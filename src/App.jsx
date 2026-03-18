@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Products from './pages/Products';
+import Offers from './pages/Offers';
 import Contact from './pages/Contact';
 import './App.css';
 
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/sobre-nosotros" element={<About />} />
         <Route path="/productos" element={<Products />} />
+        <Route path="/ofertas" element={<Offers />} />
         <Route path="/contacto" element={<Contact />} />
       </Routes>
       <Footer />

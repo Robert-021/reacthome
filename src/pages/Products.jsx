@@ -23,7 +23,7 @@ import imgSmarTCL from '../{components,pages,assets/images}/SmarTCL.png';
 import imgSmarTV from '../{components,pages,assets/images}/SmarTV.png';
 import imgTelevisor from '../{components,pages,assets/images}/Televisor.png';
 
-const categories = ['Todos', 'Celulares', 'Televisores', 'Electrodomésticos'];
+const categories = ['Todos', 'Celulares', 'Televisores', 'Línea Blanca'];
 
 const products = [
   { id: 1, name: 'HONOR X7c 4G', category: 'Celulares', image: imgHonor, badge: null },
@@ -38,16 +38,16 @@ const products = [
   { id: 10, name: 'TCL SMART TV 43"', category: 'Televisores', image: imgSmarTCL, badge: null },
   { id: 11, name: 'SMART TV 50"', category: 'Televisores', image: imgSmarTV, badge: null },
   { id: 12, name: 'SMART TV 55"', category: 'Televisores', image: imgTelevisor, badge: null },
-  { id: 13, name: 'COCINA ELECTROLUX 76DXR', category: 'Electrodomésticos', image: imgElectroCocina, badge: null },
-  { id: 14, name: 'COCINA 4 QUEMADORES', category: 'Electrodomésticos', image: imgCocina, badge: null },
-  { id: 15, name: 'REFRIGERADOR ELECTROLUX TF55S ', category: 'Electrodomésticos', image: imgElectroRefri, badge: null },
-  { id: 16, name: 'COCINA INDURAMA ZAFIRO', category: 'Electrodomésticos', image: imgInduCocina, badge: null },
-  { id: 17, name: 'HORNO MICRRONDAS', category: 'Electrodomésticos', image: imgMicroo, badge: null },
-  { id: 18, name: 'REFRIGERADORA HISENSE', category: 'Electrodomésticos', image: imgNevera, badge: null },
-  { id: 19, name: 'REFRIGERADORA INDURAMA RI-395', category: 'Electrodomésticos', image: imgRefriIndurama, badge: null },
+  { id: 13, name: 'COCINA ELECTROLUX 76DXR', category: 'Línea Blanca', image: imgElectroCocina, badge: null },
+  { id: 14, name: 'COCINA 4 QUEMADORES', category: 'Línea Blanca', image: imgCocina, badge: null },
+  { id: 15, name: 'REFRIGERADOR ELECTROLUX TF55S ', category: 'Línea Blanca', image: imgElectroRefri, badge: null },
+  { id: 16, name: 'COCINA INDURAMA ZAFIRO', category: 'Línea Blanca', image: imgInduCocina, badge: null },
+  { id: 17, name: 'HORNO MICRRONDAS', category: 'Línea Blanca', image: imgMicroo, badge: null },
+  { id: 18, name: 'REFRIGERADORA HISENSE', category: 'Línea Blanca', image: imgNevera, badge: null },
+  { id: 19, name: 'REFRIGERADORA INDURAMA RI-395', category: 'Línea Blanca', image: imgRefriIndurama, badge: null },
 ];
 
-const icons = { 'Celulares': <Smartphone size={18} />, 'Televisores': <Tv size={18} />, 'Electrodomésticos': <Refrigerator size={18} /> };
+const icons = { 'Celulares': <Smartphone size={18} />, 'Televisores': <Tv size={18} />, 'Línea Blanca': <Refrigerator size={18} /> };
 
 export default function Products() {
   const [active, setActive] = useState('Todos');
@@ -91,7 +91,12 @@ export default function Products() {
                 </div>
                 <div className="product-card__cat">{p.category}</div>
                 <h3>{p.name}</h3>
-                <a href="https://wa.me/593995071589" target="_blank" rel="noopener" className="btn btn-primary">
+                <a
+                  href="https://wa.me/593959728822?text=Buen%20día,%20he%20revisado%20su%20página%20web%20y%20los%20productos%20que%20ofrecen.%20Estoy%20muy%20interesado%20en%20adquirir%20uno%20de%20sus%20equipos%20y%20me%20gustaría%20recibir%20más%20información%20sobre%20precios,%20disponibilidad%20y%20requisitos.%20Quedo%20atento%20a%20su%20respuesta,%20muchas%20gracias."
+                  target="_blank"
+                  rel="noopener"
+                  className="btn btn-primary"
+                >
                   Solicitar crédito <ExternalLink size={14} />
                 </a>
               </div>

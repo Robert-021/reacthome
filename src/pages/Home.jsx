@@ -100,11 +100,11 @@ export default function Home() {
           </div>
           <div className="hero__image animate-fade-up animate-delay-2">
             {heroImages.map((src, index) => (
-              <img 
+              <img
                 key={index}
-                src={src} 
-                alt="HomePlay Producto" 
-                className={index === currentHeroIndex ? 'active' : ''} 
+                src={src}
+                alt="HomePlay Producto"
+                className={index === currentHeroIndex ? 'active' : ''}
               />
             ))}
           </div>
@@ -191,7 +191,7 @@ export default function Home() {
       <section className="brands">
         <div className="container" style={{ padding: '0 12px' }}>
           <p className="brands__label">Marcas que trabajamos</p>
-          
+
           <div className="brands__track-wrapper">
             <div className="brands__track brands__track--left">
               {[...brandsTop, ...brandsTop].map((src, i) => (
@@ -201,7 +201,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          
+
           <div className="brands__track-wrapper" style={{ marginTop: '32px' }}>
             <div className="brands__track brands__track--right">
               {[...brandsBottom, ...brandsBottom].map((src, i) => (
@@ -220,9 +220,9 @@ export default function Home() {
         <div className="container">
           <div className="banner-cta__inner">
             <div className="banner-cta__content">
-              <h2>Elige tu celular soñado hoy</h2>
+              <h2>Elige tu celular/Smart TV soñado hoy</h2>
               <p>Págalo mientras lo usas, con pequeñas cuotas semanales. Conéctate con tus seres queridos al instante.</p>
-              <Link to="/productos" className="btn btn-primary">
+              <Link to="/ofertas" className="btn btn-primary">
                 Ver todos los productos <ArrowRight size={16} />
               </Link>
             </div>
