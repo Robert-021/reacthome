@@ -54,6 +54,7 @@ export default function Products() {
 
   const filtered = active === 'Todos' ? products : products.filter(p => p.category === active);
 
+
   return (
     <main className="products">
       <section className="products__hero">
@@ -97,20 +98,27 @@ export default function Products() {
                   rel="noopener"
                   className="btn btn-primary"
                 >
-                  Solicitar crédito <ExternalLink size={14} />
+                  Solicitar información <ExternalLink size={14} />
                 </a>
               </div>
             ))}
           </div>
 
+
+
           <div className="products__tiktok">
             <p>¿Quieres ver más productos?</p>
-            <a href="https://www.tiktok.com/@homeplaycredito" target="_blank" rel="noopener" className="btn btn-dark">
-              Visita nuestro TikTok <ExternalLink size={14} />
+            <a
+              href="https://wa.me/593959728822?text=Buen%20día,%20me%20gustaría%20solicitar%20más%20información%20sobre%20su%20catálogo%20de%20productos."
+              target="_blank"
+              rel="noopener"
+              className="btn btn-primary"
+            >
+              Solicita nuestro catálogo <ExternalLink size={14} />
             </a>
           </div>
         </div>
       </section>
-    </main>
+    </main >
   );
 }

@@ -1,4 +1,4 @@
-import { ExternalLink, Tag } from 'lucide-react';
+import { ExternalLink, Tag, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import './Offers.css';
 
@@ -162,51 +162,36 @@ export default function Offers() {
         <div className="container faq__container">
 
           <div className="faq__content">
+            <span className="section-tag">Preguntas Frecuentes</span>
             <h2>Resolvemos tus dudas</h2>
 
             <div className="faq__list">
 
-              <div className="faq__item">
-                <div className="faq__question" onClick={() => toggleFAQ(0)}>
-                  ¿Qué marcas me ofrecen?
-                </div>
-                {activeIndex === 0 && (
-                  <div className="faq__answer">
-                    Trabajamos con Samsung, TCL, Honor, Xiaomi y más.
+              {[
+                { q: '¿Qué marcas me ofrecen?', a: 'Trabajamos con Samsung, TCL, Honor, Xiaomi y más.' },
+                { q: '¿Qué requisitos necesito?', a: 'Solo tu cédula y validación rápida.' },
+                { q: '¿Cuál es el valor de entrada?', a: 'El valor de la entrada depende del nivel asignado, pero va desde el 15% hasta el 35%. Esto sirve para que tus cuotas no salgan elevadas.' },
+              ].map((item, i) => (
+                <div key={i} className={`faq__item ${activeIndex === i ? 'faq__item--open' : ''}`}>
+                  <div className="faq__question" onClick={() => toggleFAQ(i)}>
+                    <span>{item.q}</span>
+                    <ChevronDown size={18} className="faq__chevron" />
                   </div>
-                )}
-              </div>
-
-              <div className="faq__item">
-                <div className="faq__question" onClick={() => toggleFAQ(1)}>
-                  ¿Qué requisitos necesito?
+                  {activeIndex === i && (
+                    <div className="faq__answer">{item.a}</div>
+                  )}
                 </div>
-                {activeIndex === 1 && (
-                  <div className="faq__answer">
-                    Solo tu cédula y validación rápida.
-                  </div>
-                )}
-              </div>
+              ))}
 
-              <div className="faq__item">
-                <div className="faq__question" onClick={() => toggleFAQ(2)}>
-                  ¿Cuál es el valor de entrada?
-                </div>
-                {activeIndex === 2 && (
-                  <div className="faq__answer">
-                    El valor de la entrada depende del nivel asignado,
-                    pero va desde el 15% hasta el 35% esto servira para que tus cuotas no salgan elevadas
-                  </div>
-                )}
-              </div>
-
-              <div className="faq__item">
+              {/* Item de bancos aparte por su contenido especial */}
+              <div className={`faq__item ${activeIndex === 3 ? 'faq__item--open' : ''}`}>
                 <div className="faq__question" onClick={() => toggleFAQ(3)}>
-                  ¿Dónde puedo pagar las cuotas?
+                  <span>¿Dónde puedo pagar las cuotas?</span>
+                  <ChevronDown size={18} className="faq__chevron" />
                 </div>
                 {activeIndex === 3 && (
                   <div className="faq__answer">
-                    <p>Transferencias directas en nuestras cuentas autorizadas:</p>
+                    <p style={{ marginBottom: '14px' }}>Transferencias directas en nuestras cuentas autorizadas:</p>
                     <div className="faq__banks">
                       <img src={imgBolivariano} alt="Banco Bolivariano" className="faq__bank-logo" />
                       <img src={imgPichincha} alt="Banco Pichincha" className="faq__bank-logo" />
@@ -220,7 +205,6 @@ export default function Offers() {
             </div>
           </div>
 
-          {/* IMAGEN */}
           <img src={imgFAQ} alt="FAQ" className="faq__image" />
 
         </div>

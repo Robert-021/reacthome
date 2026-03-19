@@ -32,7 +32,7 @@ export default function Contact() {
         <div className="container contact__grid">
 
           <div className="contact__info">
-            <h2>¿Listo para tu crédito?</h2>
+            <h2>¿Listo?</h2>
             <p>Contáctanos hoy mismo y uno de nuestros asesores te atenderá de inmediato.</p>
 
             <div className="contact__info-list">
