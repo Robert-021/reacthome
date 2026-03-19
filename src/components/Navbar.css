@@ -1,136 +1,174 @@
-.navbar {
-    position: fixed;
-    top: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: auto;
-    z-index: 100;
-    padding: 0;
+/* =================================================================
+  Variables
+================================================================= */
+:root {
+  --navbar-height: 64px;
+  --navbar-background: rgba(20, 20, 20, 0.75);
+  --navbar-background-scrolled: rgba(10, 10, 10, 0.9);
+  --navbar-border-color: rgba(255, 255, 255, 0.08);
+  --navbar-border-color-hover: rgba(255, 255, 255, 0.15);
+  --navbar-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  --navbar-shadow-scrolled: 0 10px 35px rgba(0, 0, 0, 0.5);
+  --navbar-blur: 14px;
+
+  --link-color: rgba(255, 255, 255, 0.75);
+  --link-color-hover: white;
+  --link-background-hover: rgba(255, 255, 255, 0.1);
+
+  --logo-text-color: white;
+  --logo-highlight-color: #e30713;
+
+  --cta-font-size: 0.75rem;
+  --cta-padding: 8px 16px;
+
+  --transition-speed: 0.3s;
 }
 
-.navbar--scrolled .navbar__inner {
-    background: rgba(10, 10, 10, 0.9);
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+/* =================================================================
+  Base Navbar Styles
+================================================================= */
+.navbar {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  z-index: 100;
+  padding: 0;
 }
 
 .navbar__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 96px;
-    padding: 10px 18px;
-    border-radius: 999px;
-    background: rgba(20, 20, 20, 0.75);
-    backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-    transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem; /* Reduced gap for better spacing */
+  padding: 8px 16px; /* Adjusted padding */
+  border-radius: 999px;
+  background: var(--navbar-background);
+  backdrop-filter: blur(var(--navbar-blur));
+  border: 1px solid var(--navbar-border-color);
+  box-shadow: var(--navbar-shadow);
+  transition: all var(--transition-speed) ease;
 }
 
 .navbar__inner:hover {
-    border: 1px solid rgba(255, 255, 255, 0.15);
+  border-color: var(--navbar-border-color-hover);
 }
 
+.navbar--scrolled .navbar__inner {
+  background: var(--navbar-background-scrolled);
+  box-shadow: var(--navbar-shadow-scrolled);
+}
+
+/* =================================================================
+  Logo
+================================================================= */
 .navbar__logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 1.2rem;
-    color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--logo-text-color);
+  flex-shrink: 0;
 }
 
-.navbar__logo-mark {
-    width: 36px;
-    height: 36px;
-    background: var(--teal);
-    color: var(--white);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    font-weight: 800;
-    letter-spacing: 0.05em;
+.navbar__logo-img {
+  height: 32px;
+  width: auto;
 }
 
+.navbar__logo-text .highlight {
+  color: var(--logo-highlight-color);
+}
+
+
+/* =================================================================
+  Navigation
+================================================================= */
 .navbar__nav {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .navbar__link {
-    font-family: var(--font-display);
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.75);
-    padding: 6px 12px;
-    border-radius: var(--radius-full);
-    transition: var(--transition);
-    letter-spacing: 0.02em;
+  font-family: var(--font-display);
+  font-size: 0.875rem; /* Increased font size for readability */
+  font-weight: 600;
+  color: var(--link-color);
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: all var(--transition-speed) ease;
+  letter-spacing: 0.02em;
 }
 
 .navbar__link:hover,
 .navbar__link--active {
-    color: var(--white);
-    background: rgba(255, 255, 255, 0.1);
+  color: var(--link-color-hover);
+  background: var(--link-background-hover);
 }
 
 .navbar__cta {
-    margin-left: 6px;
-    font-size: 0.75rem !important;
-    padding: 8px 16px !important;
-    border-radius: 999px;
+  margin-left: 6px;
+  font-size: var(--cta-font-size) !important;
+  padding: var(--cta-padding) !important;
+  border-radius: 999px;
 }
 
+
+/* =================================================================
+  Mobile Navigation (Hamburger)
+================================================================= */
 .navbar__burger {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--white);
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 8px;
-    transition: var(--transition);
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background var(--transition-speed) ease;
 }
 
 .navbar__burger:hover {
-    background: rgba(255, 255, 255, 0.1);
+  background: var(--link-background-hover);
 }
 
-@media (max-width: 768px) {
-    .navbar__burger {
-        display: flex;
-    }
+@media (max-width: 920px) {
+  .navbar__burger {
+    display: flex;
+    z-index: 101; /* Ensure it's above the nav */
+  }
 
-    .navbar__nav {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: var(--black);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 24px;
-    }
+  .navbar__nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--black);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem; /* Adjusted gap for mobile */
+    z-index: 100;
+  }
 
-    .navbar__nav--open {
-        display: flex;
-    }
+  .navbar__nav--open {
+    display: flex;
+  }
 
-    .navbar__link {
-        font-size: 1.4rem;
-        padding: 12px 28px;
-    }
+  .navbar__link {
+    font-size: 1.4rem;
+    padding: 12px 28px;
+  }
 
-    .navbar__cta {
-        margin-left: 0 !important;
-        font-size: 1rem !important;
-        padding: 14px 32px !important;
-    }
+  .navbar__cta {
+    margin-left: 0 !important;
+    font-size: 1rem !important;
+    padding: 14px 32px !important;
+  }
 }

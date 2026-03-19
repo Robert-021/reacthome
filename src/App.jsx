@@ -6,11 +6,13 @@ import About from './pages/About';
 import Products from './pages/Products';
 import Offers from './pages/Offers';
 import Contact from './pages/Contact';
+import ScrollToTop from './components/ScrollToTop'; // Import the new component
 import './App.css';
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop /> {/* Add the component here */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -38,7 +38,7 @@ const steps = [
 import './Home.css';
 
 const whyItems = [
-  { icon: <Shield size={28} />, title: 'Sin Buró de Crédito', desc: 'No importa tu historial. Te damos la oportunidad que mereces.' },
+  { icon: <Shield size={28} />, title: 'Construye tu Futuro', desc: 'Reportamos tus pagos positivos para ayudarte a fortalecer tu perfil financiero paso a paso.' },
   { icon: <Zap size={28} />, title: 'Aprobación Inmediata', desc: 'Proceso en minutos, sin esperas largas ni trámites tediosos.' },
   { icon: <Gift size={28} />, title: 'Premios y Regalos', desc: 'Cumple tus pagos a tiempo y accede a beneficios exclusivos.' },
   { icon: <TrendingUp size={28} />, title: 'Mejora tu Historial', desc: 'Construye tu historial crediticio pagando tus cuotas.' },

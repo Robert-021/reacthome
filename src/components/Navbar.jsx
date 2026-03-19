@@ -26,8 +26,10 @@ export default function Navbar() {
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner container">
         <Link to="/" className="navbar__logo">
-          <img src={faviconImage} alt="HomePlay Logo" className="navbar__logo-img" style={{ height: '32px', width: 'auto', marginRight: '8px' }} />
-          <span className="navbar__logo-text"><span style={{ color: '#e30713' }}>Home</span>Play</span>
+          <img src={faviconImage} alt="HomePlay Logo" className="navbar__logo-img" />
+          <span className="navbar__logo-text">
+            <span className="highlight">HOME</span>PLAY
+          </span>
         </Link>
 
         <nav className={`navbar__nav ${open ? 'navbar__nav--open' : ''}`}>
