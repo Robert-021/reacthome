@@ -129,6 +129,9 @@
 }
 
 @media (max-width: 768px) {
-  .about__story-inner { grid-template-columns: 1fr; }
+  .about__hero, .about__story, .about__values {
+    padding: 60px 0;
+  }
+  .about__story-inner { grid-template-columns: 1fr; gap: 40px; }
   .about__values-grid { grid-template-columns: 1fr; }
 }

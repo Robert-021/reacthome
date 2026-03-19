@@ -111,7 +111,7 @@ export default function Offers() {
 
           <div style={{ textAlign: "center", marginBottom: "40px" }}>
             <h2>Estrena celular o Smart TV nuevo y págalo en cuotas</h2>
-            <p style={{ maxWidth: "600px", margin: "0 auto", opacity: 0.8 }}>
+            <p className="offers__text">
               Empieza con un pago inicial y difiérelo en cuotas desde 3 hasta 9 meses,
               sin ningún interés por morosidad.
             </p>
@@ -122,7 +122,7 @@ export default function Offers() {
             <div className="offer-card">
               <div className="offer-card__num" style={{ fontSize: "40px", fontWeight: "800", color: "var(--accent-red)" }}>1</div>
               <h3>Solo presenta tu cédula</h3>
-              <p style={{ opacity: 0.7 }}>
+              <p className="offers__text">
                 Proceso rápido y sin complicaciones.
               </p>
             </div>
@@ -130,7 +130,7 @@ export default function Offers() {
             <div className="offer-card">
               <div className="offer-card__num" style={{ fontSize: "40px", fontWeight: "800", color: "var(--accent-red)" }}>2</div>
               <h3>Elige el equipo de tus sueños</h3>
-              <p style={{ opacity: 0.7 }}>
+              <p className="offers__text">
                 Celulares y Smart TV disponibles.
               </p>
             </div>
@@ -138,12 +138,12 @@ export default function Offers() {
             <div className="offer-card">
               <div className="offer-card__num" style={{ fontSize: "40px", fontWeight: "800", color: "var(--accent-red)" }}>3</div>
               <h3>Sal con tu producto</h3>
-              <p style={{ opacity: 0.7 }}>
+              <p className="offers__text">
                 Paga en cuotas semanales o quincenales.
               </p>
             </div>
           </div>
-          
+
           {/* Botón centrado */}
           <div style={{ textAlign: "center", marginTop: "40px" }}>
             <a

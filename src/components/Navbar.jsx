@@ -21,25 +21,34 @@ export default function Navbar() {
   useEffect(() => {
     const onScroll = () => {
       const currentScrollY = window.scrollY;
-      
-      // Scrolled state (for background change)
+
       setScrolled(currentScrollY > 40);
 
-      // Visibility state (hide on scroll down, show on scroll up)
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down
         setVisible(false);
       } else {
-        // Scrolling up
         setVisible(true);
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, [lastScrollY]);
+
+  // 👇 AQUÍ VA ESTE NUEVO useEffect
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [open]);
 
   return (
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''} ${!visible ? 'navbar--hidden' : ''}`}>

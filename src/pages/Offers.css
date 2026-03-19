@@ -19,10 +19,12 @@
 
 .offers__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* Centrado real usando grid flexible */
+  grid-template-columns: repeat(3, minmax(280px, 320px));
+  justify-content: center;
   gap: 32px;
   margin: 48px auto 0;
-  max-width: 1000px; /* Constrained for better symmetry */
+  width: 100%;
 }
 
 .offer-card {
@@ -38,6 +40,15 @@
   position: relative;
   transition: var(--transition);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin: 0 auto;
+}
+
+/* Fuerza el color negro en los textos de las tarjetas blancas, superando herencias de .section-red */
+.offers__contact .offer-card h3,
+.offers__contact .offer-card p,
+.offers__contact .offer-card .offers__text {
+  color: var(--black) !important;
+  opacity: 1 !important;
 }
 
 .offer-card h3,
@@ -121,9 +132,33 @@
   gap: 24px;
 }
 
-.offers__contact h2,
-.offers__contact p {
-  max-width: 800px;
+.offers__contact h2 {
+  color: var(--white);
+  opacity: 1;
+  margin: 0 auto 20px;
+  max-width: 850px;
+}
+
+.offers__text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 650px;
+  margin: 0 auto;
+  color: inherit;
+}
+
+.section-red .offers__text {
+  color: var(--white);
+  opacity: 0.85;
+}
+
+/* Card overrides for contrast */
+.offer-card .offers__text {
+  color: var(--black) !important;
+  opacity: 1 !important;
+  font-size: 0.92rem;
+  margin: 0;
+  max-width: 100%;
 }
 
 .offers__contact.section-red {
@@ -134,6 +169,11 @@
 .offers__contact.section-red h2,
 .offers__contact.section-red p {
   color: var(--white) !important;
+}
+
+/* Evitar que la regla anterior afecte a las tarjetas */
+.offers__contact.section-red .offer-card p {
+  color: var(--black) !important;
 }
 
 /* ── FAQ ── */
