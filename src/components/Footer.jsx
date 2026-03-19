@@ -16,7 +16,7 @@ export default function Footer() {
                 className="footer__logo-img"
                 style={{ height: '32px', width: 'auto', marginRight: '8px' }}
               />
-              <span><span style={{ color: '#e30713' }}>HOME</span>PLAY</span>
+              <span><span style={{ color: 'rgb(226, 7, 17)' }}>HOME</span>PLAY</span>
             </div>
 
             <p className="footer__tagline">

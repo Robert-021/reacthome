@@ -5,11 +5,10 @@
   overflow: hidden;
 }
 
-.products__hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 70% 50%, rgba(0, 184, 160, 0.12) 0%, transparent 60%);
+.products__hero .container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
 }
 
 .products__list {
@@ -41,9 +40,9 @@
 
 .products__filter-btn:hover,
 .products__filter-btn.active {
-  background: var(--teal);
+  background: var(--accent-red);
   color: var(--white);
-  border-color: var(--teal);
+  border-color: var(--accent-red);
 }
 
 .products__grid {
@@ -66,8 +65,8 @@
 }
 
 .product-card:hover {
-  border-color: var(--teal);
-  box-shadow: 0 8px 32px rgba(0, 184, 160, 0.12);
+  border-color: var(--accent-red);
+  box-shadow: 0 8px 32px rgba(226, 7, 17, 0.12);
   transform: translateY(-3px);
 }
 
@@ -75,7 +74,7 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  background: var(--orange);
+  background: var(--accent-red);
   color: var(--white);
   font-family: var(--font-display);
   font-size: 0.72rem;
@@ -89,8 +88,8 @@
 .product-card__icon {
   width: 56px;
   height: 56px;
-  background: var(--teal-light);
-  color: var(--teal);
+  background: var(--accent-red-light);
+  color: var(--accent-red);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -103,19 +102,21 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--teal);
+  color: var(--accent-red);
 }
 
 .product-card h3 {
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--black); /* Fixed contrast */
 }
 
 .product-card p {
-  font-size: 0.88rem;
-  color: var(--gray-600);
-  line-height: 1.6;
+  font-size: 0.92rem;
+  color: var(--gray-700); /* Fixed contrast */
+  line-height: 1.7;
   flex: 1;
 }
 
@@ -129,13 +130,24 @@
 
 .products__tiktok {
   text-align: center;
-  padding: 56px;
-  background: var(--gray-100);
+  padding: 80px 56px;
+  background: var(--accent-red);
+  color: var(--white);
   border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 24px;
+}
+
+.products__tiktok .btn-primary {
+  background: var(--black);
+  border-color: var(--black);
+}
+
+.products__tiktok .btn-primary:hover {
+  background: #222;
+  border-color: #222;
 }
 
 .products__tiktok p {

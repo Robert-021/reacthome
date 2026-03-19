@@ -6,6 +6,8 @@ import imgHero2 from '../{components,pages,assets/images}/ElectroCocina.png';
 import imgHero3 from '../{components,pages,assets/images}/ElectroRefri.png';
 import imgHero4 from '../{components,pages,assets/images}/SmarTCL.png';
 import imgHero5 from '../{components,pages,assets/images}/LaptopHP.png';
+import imgBannerHonor from '../{components,pages,assets/images}/phones/honor.png';
+import ParticleBackground from '../components/ParticleBackground';
 
 // Brands
 import b1 from '../{components,pages,assets/images}/marcas/BOSCH.png';
@@ -31,8 +33,8 @@ import imgStep3 from '../{components,pages,assets/images}/EstrenaCelu.png';
 
 const steps = [
   { num: '01', title: 'Presenta tu cédula', desc: 'Solo necesitas tu documento de identidad. Sin burocracia ni papeleos complicados.', img: imgStep1 },
-  { num: '02', title: 'Escoge tu favorito', desc: 'Elige entre celulares, TVs y electrodomésticos de las mejores marcas del mercado.', img: imgStep2 },
-  { num: '03', title: 'Llévatelo hoy', desc: 'Sale de la tienda con tu producto y paga en cómodas cuotas semanales o quincenales.', img: imgStep3 },
+  { num: '02', title: 'Escoge tu favorito', desc: 'Elige entre celulares, TVs y productos de línea blanca de las mejores marcas del mercado.', img: imgStep2 },
+  { num: '03', title: 'Llévatelo hoy', desc: 'Sale de la tienda con tu producto y paga en cómodas cuotas semanales, quincenales o mensuales.', img: imgStep3 },
 ];
 
 import './Home.css';
@@ -40,7 +42,6 @@ import './Home.css';
 const whyItems = [
   { icon: <Shield size={28} />, title: 'Construye tu Futuro', desc: 'Reportamos tus pagos positivos para ayudarte a fortalecer tu perfil financiero paso a paso.' },
   { icon: <Zap size={28} />, title: 'Aprobación Inmediata', desc: 'Proceso en minutos, sin esperas largas ni trámites tediosos.' },
-  { icon: <Gift size={28} />, title: 'Premios y Regalos', desc: 'Cumple tus pagos a tiempo y accede a beneficios exclusivos.' },
   { icon: <TrendingUp size={28} />, title: 'Mejora tu Historial', desc: 'Construye tu historial crediticio pagando tus cuotas.' },
 ];
 
@@ -48,7 +49,7 @@ const brandsTop = [b1, b2, b3, b4, b5, b6, b7, b8];
 const brandsBottom = [b9, b10, b11, b12, b13, b14, b15, b16];
 
 const businessPerks = [
-  'Sin Buró de crédito',
+  'Sin demoras',
   'Contratos automáticos',
   'Solo copia de cédula',
   'Facilidad de ventas',
@@ -56,7 +57,6 @@ const businessPerks = [
 
 const clientPerks = [
   'Cuotas semanales, quincenales o mensuales',
-  'Premios por pagos puntuales',
   'Sin entrada en tu próxima compra',
   'Certificado y mejora de crédito',
 ];
@@ -65,11 +65,23 @@ export default function Home() {
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
   const heroImages = [imgHero1, imgHero2, imgHero3, imgHero4, imgHero5];
 
+  // Banner CTA dynamic images
+  const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
+  const bannerImages = [imgBannerHonor, imgHero4];
+
   useEffect(() => {
-    const interval = setInterval(() => {
+    const heroInterval = setInterval(() => {
       setCurrentHeroIndex((prev) => (prev + 1) % heroImages.length);
     }, 4000);
-    return () => clearInterval(interval);
+
+    const bannerInterval = setInterval(() => {
+      setCurrentBannerIndex((prev) => (prev + 1) % bannerImages.length);
+    }, 3500);
+
+    return () => {
+      clearInterval(heroInterval);
+      clearInterval(bannerInterval);
+    };
   }, []);
 
   return (
@@ -77,25 +89,26 @@ export default function Home() {
 
       {/* ── HERO ── */}
       <section className="hero">
+        <ParticleBackground />
         <div className="hero__bg">
           <div className="hero__circle hero__circle--1" />
           <div className="hero__circle hero__circle--2" />
         </div>
         <div className="container hero__inner">
           <div className="hero__content animate-fade-up">
-            <span className="section-tag">Crédito Directo · Ecuador</span>
+            <span className="section-tag">sin tramites largos · Ecuador</span>
             <h1 className="hero__title">
               Tu mejor opción en<br />
               <em>Tecnología &amp;</em><br />
               Hogar Inteligente
             </h1>
             <p className="hero__desc">
-              Con nuestros planes de crédito, la innovación y la calidad están al alcance de tu mano.
+              Con nuestras cuotas semanales, quincenales o mensuales, la innovación y la calidad están al alcance de tu mano.
               Electrodomésticos y celulares de última generación — sin complicaciones.
             </p>
             <div className="hero__actions">
               <Link to="/contacto" className="btn btn-primary">
-                Solicitar crédito <ArrowRight size={16} />
+                pidelo ya! <ArrowRight size={16} />
               </Link>
               <Link to="/productos" className="btn btn-outline">
                 Ver productos
@@ -138,7 +151,7 @@ export default function Home() {
       </section>
 
       {/* ── WHY ── */}
-      <section className="why">
+      <section className="why section-black">
         <div className="container">
           <div className="why__header">
             <span className="section-tag">¿Por qué HomePlay?</span>
@@ -160,11 +173,11 @@ export default function Home() {
       </section>
 
       {/* ── BUSINESS / CLIENT ── */}
-      <section className="perks">
+      <section className="perks section-red">
         <div className="container">
           <div className="perks__grid">
             <div className="perks__card perks__card--dark">
-              <span className="section-tag" style={{ background: 'rgba(239,68,68,0.2)', color: 'var(--teal)' }}>Para Empresas</span>
+              <span className="section-tag">Para Empresas</span>
               <h3>Aumenta tus ventas</h3>
               <p>Integra nuestro sistema de crédito directo y cierra más ventas sin riesgo.</p>
               <ul>
@@ -175,8 +188,8 @@ export default function Home() {
               <Link to="/contacto" className="btn btn-primary" style={{ marginTop: 'auto' }}>Hablar con ventas</Link>
             </div>
 
-            <div className="perks__card perks__card--image">
-              <img src="https://homeplay.ec/images/tv.png" alt="TV HomePlay" />
+            <div className="perks__image">
+              <img src={imgHero1} alt="Electrodomésticos HomePlay" />
             </div>
 
             <div className="perks__card perks__card--light">
@@ -221,18 +234,25 @@ export default function Home() {
       </section>
 
       {/* ── BANNER CTA ── */}
-      <section className="banner-cta">
+      <section className="banner-cta section-white">
         <div className="container">
           <div className="banner-cta__inner">
             <div className="banner-cta__content">
               <h2>Elige tu celular/Smart TV soñado hoy</h2>
               <p>Págalo mientras lo usas, con pequeñas cuotas semanales. Conéctate con tus seres queridos al instante.</p>
               <Link to="/ofertas" className="btn btn-primary">
-                Ver todos los productos <ArrowRight size={16} />
+                Estrena ya! <ArrowRight size={16} />
               </Link>
             </div>
             <div className="banner-cta__image">
-              <img src="https://homeplay.ec/images/banner_celulares.png" alt="Celulares HomePlay" />
+              {bannerImages.map((src, index) => (
+                <img
+                  key={index}
+                  src={src}
+                  alt="Banner Producto"
+                  className={index === currentBannerIndex ? 'active' : ''}
+                />
+              ))}
             </div>
           </div>
         </div>

@@ -23,7 +23,7 @@
 .hero__circle--1 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(239, 68, 68, 0.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(226, 7, 17, 0.15) 0%, transparent 70%);
   top: -200px;
   right: -100px;
 }
@@ -31,7 +31,7 @@
 .hero__circle--2 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(255, 92, 46, 0.10) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(226, 7, 17, 0.08) 0%, transparent 70%);
   bottom: -100px;
   left: -100px;
 }
@@ -59,7 +59,7 @@
 
 .hero__title em {
   font-style: normal;
-  color: var(--teal);
+  color: var(--accent-red);
 }
 
 .hero__desc {
@@ -90,7 +90,7 @@
   height: 100%;
   object-fit: contain;
   animation: float 4s ease-in-out infinite;
-  filter: drop-shadow(0 32px 64px rgba(239, 68, 68, 0.25));
+  filter: drop-shadow(0 32px 64px rgba(226, 7, 17, 0.25));
   position: absolute;
   top: 0;
   left: 0;
@@ -107,7 +107,7 @@
 /* ── STEPS ── */
 .steps {
   padding: 100px 0;
-  background: var(--cream);
+  background: var(--white);
 }
 
 .steps__header {
@@ -187,32 +187,48 @@
 /* ── WHY ── */
 .why {
   padding: 100px 0;
+  background: var(--black);
+  color: var(--white);
+}
+
+.why .section-title {
+  color: var(--white);
+}
+
+.why .section-subtitle {
+  color: var(--gray-400);
+  margin: 12px auto 0; /* Centered */
 }
 
 .why__header {
   margin-bottom: 56px;
+  text-align: center;
 }
 
 .why__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin: 48px auto 0;
+  max-width: 1100px;
 }
 
 .why-card {
-  border: 1.5px solid var(--gray-200);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: var(--radius-md);
   padding: 32px 24px;
   transition: var(--transition);
 }
 
 .why-card:hover {
-  border-color: var(--teal);
-  box-shadow: 0 4px 24px rgba(239, 68, 68, 0.12);
+  border-color: var(--accent-red);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 24px rgba(226, 7, 17, 0.12);
 }
 
 .why-card__icon {
-  color: var(--teal);
+  color: var(--accent-red);
   margin-bottom: 16px;
 }
 
@@ -232,27 +248,35 @@
 /* ── PERKS ── */
 .perks {
   padding: 100px 0;
-  background: var(--gray-100);
+  background: var(--accent-red); /* Section Red */
+  color: var(--white);
+}
+
+.perks .section-title {
+  color: var(--white);
 }
 
 .perks__grid {
   display: grid;
-  grid-template-columns: 1fr 280px 1fr;
-  gap: 24px;
-  align-items: stretch;
+  grid-template-columns: 1fr 1.2fr 1fr; /* Customized columns */
+  gap: 32px;
+  margin-top: 48px;
+  align-items: stretch; /* All cards equal height */
 }
 
 .perks__card {
-  border-radius: var(--radius-lg);
   padding: 48px 40px;
+  border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
+  height: 100%; /* Ensure full height */
 }
 
 .perks__card--dark {
   background: var(--black);
   color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .perks__card--dark h3 {
@@ -273,7 +297,15 @@
 
 .perks__card--light {
   background: var(--white);
+  color: var(--black); /* Fixed contrast */
+  box-shadow: var(--shadow-md);
   border: 1.5px solid var(--gray-200);
+}
+
+.perks__card--light h3,
+.perks__card--light p,
+.perks__card--light ul li {
+  color: var(--black) !important;
 }
 
 .perks__card--light h3 {
@@ -303,7 +335,7 @@
 }
 
 .perks__card ul li svg {
-  color: var(--teal);
+  color: var(--accent-red);
   flex-shrink: 0;
 }
 
@@ -311,18 +343,50 @@
   color: rgba(255, 255, 255, 0.75);
 }
 
-.perks__card--image {
-  background: var(--teal-light);
-  border-radius: var(--radius-lg);
+.hero__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 90vh;
+  padding-top: 140px; /* More top space */
+  gap: 80px; /* Wider gap */
+}
+
+.hero .container {
+  max-width: 1800px; /* Horizonte ultra-ancho */
+  width: 95%; /* 5% de margen lateral */
+  position: relative;
+  z-index: 2;
+}
+
+.hero__content {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+.hero__image {
+  flex: 1.6; /* Prioridad máxima a la imagen */
+  height: 680px; /* Altura de imagen prémium */
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
 }
 
-.perks__card--image img {
+.perks__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transform: scale(1.1); /* Slightly larger image */
+}
+
+.perks__image img {
   max-width: 100%;
+  max-height: 500px;
   object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3)); /* Premium look */
 }
 
 /* ── BRANDS ── */
@@ -406,7 +470,7 @@
 /* ── BANNER CTA ── */
 .banner-cta {
   padding: 100px 0;
-  background: var(--black);
+  background: var(--white); /* Changed to white for footer separation */
 }
 
 .banner-cta__inner {
@@ -414,10 +478,11 @@
   grid-template-columns: 1fr 1fr;
   gap: 64px;
   align-items: center;
-  background: linear-gradient(135deg, #2a0f0f 0%, #0a0a0a 100%);
+  background: linear-gradient(135deg, #1a0510 0%, #000000 100%);
   border-radius: var(--radius-lg);
   padding: 64px;
-  border: 1px solid rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(226, 7, 17, 0.4);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
 }
 
 .banner-cta__content h2 {
@@ -430,17 +495,33 @@
 }
 
 .banner-cta__content p {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 1rem;
   line-height: 1.8;
   margin-bottom: 32px;
 }
 
-.banner-cta__image img {
+.banner-cta__image {
+  position: relative;
+  height: 300px;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-cta__image img {
+  position: absolute;
+  max-height: 100%;
+  width: auto;
   object-fit: contain;
-  max-height: 300px;
-  filter: drop-shadow(0 16px 48px rgba(239, 68, 68, 0.2));
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  filter: drop-shadow(0 16px 48px rgba(226, 7, 17, 0.5));
+}
+
+.banner-cta__image img.active {
+  opacity: 1;
 }
 
 /* ── RESPONSIVE ── */

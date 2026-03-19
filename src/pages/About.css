@@ -9,14 +9,20 @@
   overflow: hidden;
 }
 
-.about__hero-bg {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 60% 40%, rgba(0,184,160,0.15) 0%, transparent 60%);
+.about__hero .container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
 }
 
 .about__story {
   padding: 100px 0;
+  background: var(--white);
+  color: var(--black);
+}
+
+.about__story .section-title {
+  color: var(--black);
 }
 
 .about__story-inner {
@@ -45,7 +51,7 @@
 }
 
 .about__badge {
-  background: var(--teal-light);
+  background: var(--accent-red-light);
   border-radius: var(--radius-md);
   padding: 28px 32px;
   display: flex;
@@ -57,7 +63,7 @@
   font-family: var(--font-display);
   font-size: 2.8rem;
   font-weight: 800;
-  color: var(--teal-dark);
+  color: var(--accent-red);
   line-height: 1;
 }
 
@@ -68,7 +74,12 @@
 
 .about__values {
   padding: 100px 0;
-  background: var(--gray-100);
+  background: var(--accent-red);
+  color: var(--white);
+}
+
+.about__values .section-title {
+  color: var(--white);
 }
 
 .about__values-grid {
@@ -79,12 +90,14 @@
 
 .about-value-card {
   background: var(--white);
+  border: 1.5px solid var(--gray-200);
   border-radius: var(--radius-lg);
   padding: 40px 32px;
   transition: var(--transition);
 }
 
 .about-value-card:hover {
+  border-color: var(--accent-red);
   box-shadow: var(--shadow-md);
   transform: translateY(-4px);
 }
@@ -92,8 +105,8 @@
 .about-value-card__icon {
   width: 56px;
   height: 56px;
-  background: var(--teal-light);
-  color: var(--teal);
+  background: var(--accent-red-light);
+  color: var(--accent-red);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -103,15 +116,16 @@
 
 .about-value-card h3 {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  color: var(--black) !important; /* Fixed: Always black on white card */
 }
 
 .about-value-card p {
-  font-size: 0.92rem;
-  color: var(--gray-600);
-  line-height: 1.7;
+  font-size: 0.95rem;
+  color: var(--gray-600) !important; /* Fixed: missing --gray-700 */
+  line-height: 1.6;
 }
 
 @media (max-width: 768px) {

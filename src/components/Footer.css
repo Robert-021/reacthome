@@ -25,7 +25,7 @@
 .footer__logo-mark {
   width: 36px;
   height: 36px;
-  background: var(--teal);
+  background: var(--accent-red);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -46,7 +46,7 @@
   font-size: 0.85rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--teal);
+  color: var(--accent-red);
   margin-bottom: 20px;
 }
 
@@ -74,7 +74,7 @@
 }
 
 .footer__contact-list li svg {
-  color: var(--teal);
+  color: var(--accent-red);
   flex-shrink: 0;
   margin-top: 3px;
 }

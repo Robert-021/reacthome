@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Smartphone, Tv, Refrigerator, ExternalLink } from 'lucide-react';
+import ParticleBackground from '../components/ParticleBackground';
 import './Products.css';
 
 import imgHonor from '../{components,pages,assets/images}/phones/HONOR.webp';
@@ -57,13 +58,15 @@ export default function Products() {
 
   return (
     <main className="products">
+      {/* HERO / FILTROS */}
       <section className="products__hero">
+        <ParticleBackground />
         <div className="container">
           <span className="section-tag">Catálogo</span>
           <h1 className="section-title" style={{ color: 'var(--white)', marginTop: 12 }}>
             Nuestros Productos
           </h1>
-          <p style={{ color: 'rgba(255,255,255,0.6)', marginTop: 12, maxWidth: 480 }}>
+          <p style={{ color: 'rgba(255,255,255,0.6)', marginTop: 12, maxWidth: 480, margin: '12px auto 0' }}>
             Encuentra la tecnología que necesitas y llévala hoy con nuestro crédito directo.
           </p>
         </div>

@@ -1,4 +1,5 @@
 import { Users, Target, Heart } from 'lucide-react';
+import ParticleBackground from '../components/ParticleBackground';
 import './About.css';
 
 const values = [
@@ -11,7 +12,8 @@ export default function About() {
   return (
     <main className="about">
       <section className="about__hero">
-        <div className="about__hero-bg" />
+        <ParticleBackground />
+        <div className="about__hero-bg"></div>
         <div className="container">
           <span className="section-tag">Nuestra Historia</span>
           <h1 className="section-title" style={{ color: 'var(--white)', marginTop: 12 }}>
@@ -20,7 +22,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="about__story">
+      <section className="about__story section-white">
         <div className="container about__story-inner">
           <div className="about__story-text">
             <span className="section-tag">Quiénes Somos</span>

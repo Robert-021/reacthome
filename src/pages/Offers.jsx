@@ -1,5 +1,6 @@
-import { ExternalLink, Tag, ChevronDown } from 'lucide-react';
+import { ExternalLink, Tag, ChevronDown, Smartphone, Tv, Layout, Package, CheckCircle } from 'lucide-react';
 import { useState } from 'react';
+import ParticleBackground from '../components/ParticleBackground';
 import './Offers.css';
 
 import imgSmarTCL from '../{components,pages,assets/images}/SmarTCL.png';
@@ -58,7 +59,8 @@ export default function Offers() {
 
       {/* HERO */}
       <section className="offers__hero">
-        <div className="offers__hero-wrapper">
+        <ParticleBackground />
+        <div className="offers__hero-wrapper container">
 
           {/* IZQUIERDA */}
           <img
@@ -104,7 +106,7 @@ export default function Offers() {
       </section>
 
       {/* SECCIÓN PASOS */}
-      <section className="offers__list">
+      <section className="offers__contact section-red">
         <div className="container">
 
           <div style={{ textAlign: "center", marginBottom: "40px" }}>
@@ -117,38 +119,38 @@ export default function Offers() {
 
           <div className="offers__grid">
 
-            <div className="offer-card" style={{ textAlign: "center" }}>
-              <div style={{ fontSize: "40px" }}>1</div>
+            <div className="offer-card">
+              <div className="offer-card__num" style={{ fontSize: "40px", fontWeight: "800", color: "var(--accent-red)" }}>1</div>
               <h3>Solo presenta tu cédula</h3>
               <p style={{ opacity: 0.7 }}>
                 Proceso rápido y sin complicaciones.
               </p>
             </div>
 
-            <div className="offer-card" style={{ textAlign: "center" }}>
-              <div style={{ fontSize: "40px" }}>2</div>
+            <div className="offer-card">
+              <div className="offer-card__num" style={{ fontSize: "40px", fontWeight: "800", color: "var(--accent-red)" }}>2</div>
               <h3>Elige el equipo de tus sueños</h3>
               <p style={{ opacity: 0.7 }}>
                 Celulares y Smart TV disponibles.
               </p>
             </div>
 
-            <div className="offer-card" style={{ textAlign: "center" }}>
-              <div style={{ fontSize: "40px" }}>3</div>
+            <div className="offer-card">
+              <div className="offer-card__num" style={{ fontSize: "40px", fontWeight: "800", color: "var(--accent-red)" }}>3</div>
               <h3>Sal con tu producto</h3>
               <p style={{ opacity: 0.7 }}>
                 Paga en cuotas semanales o quincenales.
               </p>
             </div>
-
           </div>
-
-          <div className="offers__contact">
+          
+          {/* Botón centrado */}
+          <div style={{ textAlign: "center", marginTop: "40px" }}>
             <a
               href="https://wa.me/593959728822?text=Buen%20día,%20quiero%20más%20información%20sobre%20cómo%20obtener%20un%20equipo%20a%20crédito."
               target="_blank"
               rel="noopener"
-              className="btn btn-primary"
+              className="btn btn-dark"
             >
               Solicitar información <ExternalLink size={14} />
             </a>
@@ -158,7 +160,7 @@ export default function Offers() {
       </section>
 
       {/* FAQ */}
-      <section className="faq">
+      <section className="faq section-white">
         <div className="container faq__container">
 
           <div className="faq__content">

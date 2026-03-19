@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { MapPin, Phone, Mail, Send, CheckCircle } from 'lucide-react';
+import ParticleBackground from '../components/ParticleBackground';
 import './Contact.css';
 
 export default function Contact() {
@@ -20,6 +21,7 @@ export default function Contact() {
   return (
     <main className="contact">
       <section className="contact__hero">
+        <ParticleBackground />
         <div className="container">
           <span className="section-tag">Escríbenos</span>
           <h1 className="section-title" style={{ color: 'var(--white)', marginTop: 12 }}>
@@ -83,7 +85,7 @@ export default function Contact() {
           <div className="contact__form-wrapper">
             {sent ? (
               <div className="contact__success">
-                <CheckCircle size={48} color="var(--teal)" />
+                <CheckCircle size={48} color="var(--accent-red)" />
                 <h3>¡Gracias por contactarnos!</h3>
                 <p>Te hemos redirigido a WhatsApp. Un asesor te responderá pronto.</p>
                 <button className="btn btn-primary" onClick={() => setSent(false)}>Enviar otro mensaje</button>

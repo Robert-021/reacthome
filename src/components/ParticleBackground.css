@@ -1,0 +1,81 @@
+.particle-network-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%; /* Relative to parent hero */
+  width: 100%;
+  background-color: #0b0b0b;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.particle-network-animation::before {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* Ruta local proporcionada por el usuario */
+  background-image: url('../{components,pages,assets,images}/FondoPages.jpg');
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.1; /* Sutil para no distraer */
+}
+
+.glow {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-image: radial-gradient(circle closest-side, rgba(226, 7, 17, 0.08), transparent);
+  pointer-events: none;
+}
+
+.glow-1 {
+  width: 150vw;
+  height: 150vh;
+  margin-top: -75vh;
+  margin-left: -75vw;
+  animation: glow-1-move 25s linear infinite both;
+}
+
+@keyframes glow-1-move {
+  from { transform: translate(-50%, 50%); }
+  to { transform: translate(50%, -50%); }
+}
+
+.glow-2 {
+  width: 100vw;
+  height: 100vh;
+  margin-top: -50vh;
+  margin-left: -50vw;
+  animation: glow-2-move 20s linear 5s infinite both;
+}
+
+@keyframes glow-2-move {
+  from { transform: translate(-50%, 0%); }
+  to { transform: translate(50%, 50%); }
+}
+
+.glow-3 {
+  width: 120vw;
+  height: 120vh;
+  margin-top: -60vh;
+  margin-left: -60vw;
+  animation: glow-3-move 30s linear 10s infinite both;
+}
+
+@keyframes glow-3-move {
+  from { transform: translate(50%, 50%); }
+  to { transform: translate(0%, -50%); }
+}
+
+canvas {
+  display: block;
+  z-index: 2;
+  position: relative;
+}
