@@ -22,8 +22,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  useEffect(() => setOpen(false), [location]);
-
   return (
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner container">
@@ -37,6 +35,7 @@ export default function Navbar() {
             <Link
               key={l.to}
               to={l.to}
+              onClick={() => setOpen(false)}
               className={`navbar__link ${location.pathname === l.to ? 'navbar__link--active' : ''}`}
             >
               {l.label}
