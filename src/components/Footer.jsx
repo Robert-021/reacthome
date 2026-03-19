@@ -8,8 +8,6 @@ export default function Footer() {
     <footer className="footer">
       <div className="container">
         <div className="footer__grid">
-
-          {/* 1️⃣ LOGO + DESCRIPCIÓN */}
           <div>
             <div className="footer__logo">
               <img
@@ -18,15 +16,13 @@ export default function Footer() {
                 className="footer__logo-img"
                 style={{ height: '32px', width: 'auto', marginRight: '8px' }}
               />
-              <span>HomePlay</span>
+              <span><span style={{ color: '#e30713' }}>Home</span>Play</span>
             </div>
 
             <p className="footer__tagline">
               Todo a tu alcance fácil y a crédito. Tecnología, confianza y facilidades de pago en un solo lugar.
             </p>
           </div>
-
-          {/* 2️⃣ REDES SOCIALES */}
           <div className="footer__col">
             <h4>Redes Sociales</h4>
             <ul>
@@ -90,7 +86,7 @@ export default function Footer() {
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.5605575663835!2d-78.48868082552292!3d-0.17695273541870316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a858f56d4d1%3A0xafe084d8581292c2!2sUnicornio%20II%20Edificio%20Empresarial!5e1!3m2!1ses-419!2sec!4v1773847587049!5m2!1ses-419!2sec"
                 width="100%"
-                height="210"
+                height="140"
                 style={{ border: 0, borderRadius: "8px" }}
                 loading="lazy"
                 title="Ubicación"

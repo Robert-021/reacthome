@@ -29,7 +29,7 @@ export default function Navbar() {
       <div className="navbar__inner container">
         <Link to="/" className="navbar__logo">
           <img src={faviconImage} alt="HomePlay Logo" className="navbar__logo-img" style={{ height: '32px', width: 'auto', marginRight: '8px' }} />
-          <span className="navbar__logo-text">HomePlay</span>
+          <span className="navbar__logo-text"><span style={{ color: '#e30713' }}>Home</span>Play</span>
         </Link>
 
         <nav className={`navbar__nav ${open ? 'navbar__nav--open' : ''}`}>

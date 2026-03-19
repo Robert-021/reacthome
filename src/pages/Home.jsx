@@ -25,13 +25,17 @@ import b14 from '../{components,pages,assets/images}/marcas/TCL.webp';
 import b15 from '../{components,pages,assets/images}/marcas/WHIRLPOOL.png';
 import b16 from '../{components,pages,assets/images}/marcas/realme.png';
 
-import './Home.css';
+import imgStep1 from '../{components,pages,assets/images}/PresentaID.jpg';
+import imgStep2 from '../{components,pages,assets/images}/ElijeUno.png';
+import imgStep3 from '../{components,pages,assets/images}/EstrenaCelu.png';
 
 const steps = [
-  { num: '01', title: 'Presenta tu cédula', desc: 'Solo necesitas tu documento de identidad. Sin burocracia ni papeleos complicados.' },
-  { num: '02', title: 'Escoge tu favorito', desc: 'Elige entre celulares, TVs y electrodomésticos de las mejores marcas del mercado.' },
-  { num: '03', title: 'Llévatelo hoy', desc: 'Sale de la tienda con tu producto y paga en cómodas cuotas semanales o quincenales.' },
+  { num: '01', title: 'Presenta tu cédula', desc: 'Solo necesitas tu documento de identidad. Sin burocracia ni papeleos complicados.', img: imgStep1 },
+  { num: '02', title: 'Escoge tu favorito', desc: 'Elige entre celulares, TVs y electrodomésticos de las mejores marcas del mercado.', img: imgStep2 },
+  { num: '03', title: 'Llévatelo hoy', desc: 'Sale de la tienda con tu producto y paga en cómodas cuotas semanales o quincenales.', img: imgStep3 },
 ];
+
+import './Home.css';
 
 const whyItems = [
   { icon: <Shield size={28} />, title: 'Sin Buró de Crédito', desc: 'No importa tu historial. Te damos la oportunidad que mereces.' },
@@ -120,10 +124,13 @@ export default function Home() {
           </div>
           <div className="steps__grid">
             {steps.map(s => (
-              <div key={s.num} className="step-card">
-                <div className="step-card__num">{s.num}</div>
-                <h3>{s.title}</h3>
-                <p>{s.desc}</p>
+              <div key={s.num} className="step-card" style={{ backgroundImage: `url(${s.img})` }}>
+                <div className="step-card__overlay" />
+                <div className="step-card__content">
+                  <div className="step-card__num">{s.num}</div>
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -191,7 +198,6 @@ export default function Home() {
       <section className="brands">
         <div className="container" style={{ padding: '0 12px' }}>
           <p className="brands__label">Marcas que trabajamos</p>
-
           <div className="brands__track-wrapper">
             <div className="brands__track brands__track--left">
               {[...brandsTop, ...brandsTop].map((src, i) => (
@@ -211,7 +217,6 @@ export default function Home() {
               ))}
             </div>
           </div>
-
         </div>
       </section>
 

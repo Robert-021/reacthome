@@ -162,13 +162,13 @@ export default function Offers() {
         <div className="container faq__container">
 
           <div className="faq__content">
-            <h2>Dudas y Respuestas</h2>
+            <h2>Resolvemos tus dudas</h2>
 
             <div className="faq__list">
 
               <div className="faq__item">
                 <div className="faq__question" onClick={() => toggleFAQ(0)}>
-                  ¿Cuáles son las marcas que tienen?
+                  ¿Qué marcas me ofrecen?
                 </div>
                 {activeIndex === 0 && (
                   <div className="faq__answer">
@@ -194,7 +194,8 @@ export default function Offers() {
                 </div>
                 {activeIndex === 2 && (
                   <div className="faq__answer">
-                    Depende del producto, siempre accesible.
+                    El valor de la entrada depende del nivel asignado,
+                    pero va desde el 15% hasta el 35% esto servira para que tus cuotas no salgan elevadas
                   </div>
                 )}
               </div>
