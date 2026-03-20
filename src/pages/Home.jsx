@@ -29,12 +29,48 @@ import b16 from '../{components,pages,assets/images}/marcas/realme.png';
 
 import imgStep1 from '../{components,pages,assets/images}/PresentaID.jpg';
 import imgStep2 from '../{components,pages,assets/images}/ElijeUno.png';
-import imgStep3 from '../{components,pages,assets/images}/EstrenaCelu.png';
+import imgStep3 from '../{components,pages,assets/images}/llevateloHoy.jpg';
 
 const steps = [
-  { num: '01', title: 'Presenta tu cédula', desc: 'Solo necesitas tu documento de identidad. Sin burocracia ni papeleos complicados.', img: imgStep1 },
-  { num: '02', title: 'Escoge tu favorito', desc: 'Elige entre celulares, TVs y productos de línea blanca de las mejores marcas del mercado.', img: imgStep2 },
-  { num: '03', title: 'Llévatelo hoy', desc: 'Sale de la tienda con tu producto y paga en cómodas cuotas semanales, quincenales o mensuales.', img: imgStep3 },
+  {
+    num: '01', title: 'Presenta tu cédula', desc: <>
+      Solo necesitas tu identificación.<br />
+      Sin trámites complicados ni papeleo.
+    </>, img: imgStep1,
+    icon: (
+      <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="3" y="6" width="18" height="12" rx="2" />
+        <circle cx="8" cy="12" r="2" />
+        <path d="M12 10h6M12 14h4" />
+      </svg>
+    )
+  },
+  {
+    num: '02', title: 'Escoge tu favorito', desc: 'Escoge entre celulares y TVs y más, de las mejores marcas.', img: imgStep2,
+    icon: (
+      <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="7" y="2" width="10" height="20" rx="2" />
+        <line x1="11" y1="18" x2="13" y2="18" />
+      </svg>
+    )
+  },
+  {
+    num: '03', title: 'Llévatelo hoy', desc: 'Sal con tu producto y paga en cuotas cómodas.', img: imgStep3,
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 2C14 5 18 7 18 12a6 6 0 0 1-12 0c0-5 4-7 6-10z"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+        <path
+          d="M12 8c1.5 2 3 3 3 5a3 3 0 0 1-6 0c0-2 1.5-3 3-5z"
+          fill="currentColor"
+          opacity="0.9"
+        />
+      </svg>
+    )
+  },
 ];
 
 import './Home.css';
@@ -133,16 +169,21 @@ export default function Home() {
         <div className="container">
           <div className="steps__header">
             <span className="section-tag">Así de Fácil</span>
-            <h2 className="section-title">3 pasos para llevarte tu producto</h2>
+            <h2 className="section-title">Llévatelo hoy en <span style={{ color: 'rgb(226, 7, 17)' }}>3 simpes pasos</span></h2>
           </div>
           <div className="steps__grid">
             {steps.map(s => (
-              <div key={s.num} className="step-card" style={{ backgroundImage: `url(${s.img})` }}>
-                <div className="step-card__overlay" />
-                <div className="step-card__content">
-                  <div className="step-card__num">{s.num}</div>
+              <div className="step-card">
+                <div className="step-card__top">
+                  <div className="step-card__icon">
+                    {s.icon}
+                  </div>
                   <h3>{s.title}</h3>
                   <p>{s.desc}</p>
+                </div>
+                <span className="step-card__num">{s.num}</span>
+                <div className="step-card__image">
+                  <img src={s.img} alt={s.title} />
                 </div>
               </div>
             ))}
@@ -154,8 +195,7 @@ export default function Home() {
       <section className="why section-black">
         <div className="container">
           <div className="why__header">
-            <span className="section-tag">¿Por qué HomePlay?</span>
-            <h2 className="section-title">Ventajas que nos hacen únicos</h2>
+            <h2 className="section-title">¿Por qué elegit HomePlay?</h2>
             <p className="section-subtitle">
               No esperes más para conectarte con tus seres queridos. Llévate tu celular soñado y págalo mientras lo usas.
             </p>
