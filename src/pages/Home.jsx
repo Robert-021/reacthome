@@ -218,6 +218,14 @@ export default function Home() {
             ))}
           </div>
         </div>
+        <a
+          href="https://wa.me/593959728822?text=Buen%20día,%20quiero%20solicitar%20un%20crédito%20con%20ustedes.%20Vi%20su%20página%20en%20internet%20y%20me%20gustaría%20recibir%20información%20para%20acceder."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-whatsapp--neon"
+        >
+          Empieza ahora
+        </a>
       </section>
 
       {/* ── BUSINESS / CLIENT ── */}

@@ -525,6 +525,91 @@
     line-height: 1.8;
 }
 
+/* CONTENEDOR (centrado) */
+.why > a.btn-whatsapp--neon {
+    display: block;
+    width: fit-content;
+    margin: 60px auto 0 auto;
+}
+/* BOTÓN ROJO BASE */
+.btn-whatsapp--neon {
+    position: relative;
+    display: inline-block;
+    margin: 60px auto;
+    
+    padding: 16px 34px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #fff;
+
+    background: linear-gradient(135deg, #e20711, #ff2e2e);
+
+    box-shadow:
+        0 10px 30px rgba(226, 7, 17, 0.4),
+        inset 0 0 10px rgba(255, 255, 255, 0.1);
+
+    overflow: hidden; /* 🔥 CLAVE */
+}
+
+/* 🔥 BORDE NEÓN BIEN POSICIONADO */
+.btn-whatsapp--neon::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* 🔥 CAMBIO CLAVE (no -2px) */
+    border-radius: inherit;
+
+    padding: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 0, 0, 0.6),
+        rgba(255, 0, 0, 1),
+        rgba(255, 0, 0, 0.6),
+        transparent
+    );
+
+    background-size: 200% 100%;
+    animation: neonBorderMove 2s linear infinite;
+
+    /* 🔥 recorte correcto */
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+
+    mask-composite: exclude;
+
+    pointer-events: none;
+}
+
+/* ✨ GLOW SUAVE (sin animación) */
+.btn-whatsapp--neon::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+
+    box-shadow:
+        0 0 10px rgba(255, 0, 0, 0.4),
+        0 0 20px rgba(255, 0, 0, 0.5);
+
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* 🔁 ANIMACIÓN SOLO BORDE */
+@keyframes neonBorderMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
 /* ── PERKS ── */
 .perks {
     padding: 100px 0;
