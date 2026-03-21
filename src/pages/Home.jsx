@@ -189,6 +189,14 @@ export default function Home() {
             ))}
           </div>
         </div>
+        <a
+          href="https://wa.me/593959728822?text=Buen%20día,%20me%20interesa%20adquirir%20un%20celular.%20¿Podrían%20ayudarme%20con%20los%20modelos%20y%20precios%20disponibles?"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-whatsapp"
+        >
+          Solicita tu equipo ahora!
+        </a>
       </section>
 
       {/* ── WHY ── */}
