@@ -54,39 +54,38 @@ export default function Footer() {
                   TikTok
                 </a>
               </li>
+              <h4>Contacto</h4>
+              <ul className="footer__contact-list">
+                <li>
+                  <MapPin size={18} />
+                  Unicornio II Edificio Empresarial
+                </li>
 
+                <li>
+                  <Phone size={18} />
+                  096 903 1988 - 096 019 2561
+                </li>
+
+                <li>
+                  <Mail size={18} />
+                  <a href="mailto:ventas@lockplay.org">ventas@lockplay.org</a>
+                </li>
+
+              </ul>
             </ul>
           </div>
 
-          {/* 3️⃣ CONTACTO + MAPA */}
+          {/*  MAPA */}
           <div className="footer__col">
-            <h4>Contacto</h4>
 
-            <ul className="footer__contact-list">
-
-              <li>
-                <MapPin size={15} />
-                Unicornio II Edificio Empresarial
-              </li>
-
-              <li>
-                <Phone size={15} />
-                096 903 1988 - 096 019 2561
-              </li>
-
-              <li>
-                <Mail size={15} />
-                <a href="mailto:ventas@lockplay.org">ventas@lockplay.org</a>
-              </li>
-
-            </ul>
+            <h4>Ubicación</h4>
 
             {/* MAPA */}
-            <div style={{ marginTop: "16px" }}>
+            <div className="footer__map">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.5605575663835!2d-78.48868082552292!3d-0.17695273541870316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a858f56d4d1%3A0xafe084d8581292c2!2sUnicornio%20II%20Edificio%20Empresarial!5e1!3m2!1ses-419!2sec!4v1773847587049!5m2!1ses-419!2sec"
                 width="100%"
-                height="140"
+                height="220"
                 style={{ border: 0, borderRadius: "8px" }}
                 loading="lazy"
                 title="Ubicación"
